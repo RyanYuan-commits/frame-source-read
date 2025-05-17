@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="userMapper" class="com.ryan.ioc_test.mapper.UserMapper" >
+        <property name="service" ref="userService"/>
+    </bean>
+    <bean id="userService" class="com.ryan.ioc_test.service.UserService">
+        <property name="mapper" ref="userMapper"/>
+    </bean>
+
+    <bean class="com.ryan.event_test.CustomEventListener"/>
+
+</beans>
